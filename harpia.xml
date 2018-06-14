@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+	<!-- Device -->
+	<project name="Harpia-development/device_motorola_harpia" path="device/motorola/harpia" remote="github" revision="du-o" />
+	<project name="Harpia-development/device_motorola_msm8916-common" path="device/motorola/msm8916-common" remote="github" revision="du-o" />
+	<project name="Harpia-development/kernel_motorola_msm8916" path="kernel/motorola/msm8916" remote="github" />
+	<project name="Harpia-development/vendor_motorola" path="vendor/motorola" remote="github" revision="o" />
+
+	<!-- Device dependencies -->
+	<project name="Harpia-development/android_device_qcom_common" path="device/qcom/common" remote="github" revision="o8x-caf" />
+	<project name="LineageOS/android_system_qcom" path="system/qcom" remote="github" revision="lineage-15.1" />
+
+	<!-- Lineage MSM8916 -->
+	<project path="hardware/qcom/audio-caf/msm8916" name="LineageOS/android_hardware_qcom_audio" groups="qcom,qcom_audio,pdk" remote="github" revision="lineage-15.1-caf-8916" />
+	<project path="hardware/qcom/display-caf/msm8916" name="LineageOS/android_hardware_qcom_display" groups="pdk,qcom,qcom_display" remote="github" revision="lineage-15.1-caf-8916" />
+	<project path="hardware/qcom/media-caf/msm8916" name="LineageOS/android_hardware_qcom_media" groups="qcom,pdk" remote="github" revision="lineage-15.1-caf-8916" />
+
+	<!-- FM Radio -->
+	<project name="DirtyUnicorns/android_hardware_qcom_fm" path="hardware/qcom/fm" remote="github" revision="o8x-caf" />
+	<project name="DirtyUnicorns/android_packages_apps_FMRadio" path="packages/apps/FMRadio" remote="github" revision="o8x-caf" />
+
+	<!-- RIL -->
+	<remove-project path="hardware/ril" name="android_hardware_ril"/>
+	<project name="LineageOS/android_hardware_ril" path="hardware/ril" remote="github" revision="lineage-15.1-caf" />
+
+	
+	<!-- Text Classifier -->
+	<remove-project name="platform/external/libtextclassifier" path="external/libtextclassifier" remote="github" revision="lineage-15.1" />
+	<project name="LineageOS/android_external_libtextclassifier" path="external/libtextclassifier" remote="github" revision="lineage-15.1" />
+
+    <!-- DU -->
+	<remove-project path="vendor/du" name="android_vendor_du"/>
+	<project name="Harpia-development/android_vendor_du" path="vendor/du" remote="github" revision="o8x" />
+
+	<!-- Add Snap -->
+	<project path="packages/apps/Snap" name="PixelExperience/packages_apps_Snap" remote="github" revision="oreo-mr1" />
+
+	<!-- Linaro 7.2 kernel toolchain -->
+	<project name="Akianonymus/Linaro-arm" path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.9" remote="github" revision="4.9" />
+
+</manifest>

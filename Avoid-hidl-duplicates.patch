@@ -1,0 +1,73 @@
+From af308a355f11140bfd1ab828b5a6eae788131230 Mon Sep 17 00:00:00 2001
+From: Akianonymus <anonymus.aki@gmail.com>
+Date: Tue, 19 Jun 2018 06:34:26 +0530
+Subject: [PATCH] Avoid hidl duplicates
+
+Change-Id: I5d80046c66a231ec0422f4155050a2f2da67db0d
+---
+ transport/base/1.0/Android.bp    | 22 ----------------------
+ transport/manager/1.0/Android.bp | 21 ---------------------
+ 2 files changed, 43 deletions(-)
+
+diff --git a/transport/base/1.0/Android.bp b/transport/base/1.0/Android.bp
+index a137f78..5f79fc2 100644
+--- a/transport/base/1.0/Android.bp
++++ b/transport/base/1.0/Android.bp
+@@ -38,25 +38,3 @@ genrule {
+         "android/hidl/base/1.0/BsBase.h",
+     ],
+ }
+-
+-cc_library_shared {
+-    name: "android.hidl.base@1.0",
+-    generated_sources: ["android.hidl.base@1.0_genc++"],
+-    generated_headers: ["android.hidl.base@1.0_genc++_headers"],
+-    export_generated_headers: ["android.hidl.base@1.0_genc++_headers"],
+-    vendor_available: true,
+-    shared_libs: [
+-        "libhidlbase",
+-        "libhidltransport",
+-        "libhwbinder",
+-        "liblog",
+-        "libutils",
+-        "libcutils",
+-    ],
+-    export_shared_lib_headers: [
+-        "libhidlbase",
+-        "libhidltransport",
+-        "libhwbinder",
+-        "libutils",
+-    ],
+-}
+diff --git a/transport/manager/1.0/Android.bp b/transport/manager/1.0/Android.bp
+index aac627f..af91ad3 100644
+--- a/transport/manager/1.0/Android.bp
++++ b/transport/manager/1.0/Android.bp
+@@ -42,24 +42,3 @@ genrule {
+     ],
+ }
+ 
+-cc_library_shared {
+-    name: "android.hidl.manager@1.0",
+-    generated_sources: ["android.hidl.manager@1.0_genc++"],
+-    generated_headers: ["android.hidl.manager@1.0_genc++_headers"],
+-    export_generated_headers: ["android.hidl.manager@1.0_genc++_headers"],
+-    vendor_available: true,
+-    shared_libs: [
+-        "libhidlbase",
+-        "libhidltransport",
+-        "libhwbinder",
+-        "liblog",
+-        "libutils",
+-        "libcutils",
+-    ],
+-    export_shared_lib_headers: [
+-        "libhidlbase",
+-        "libhidltransport",
+-        "libhwbinder",
+-        "libutils",
+-    ],
+-}
+-- 
+2.11.0
+
